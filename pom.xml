@@ -53,5 +53,6 @@
 		<module>springcloud-rdltest-eureka</module>
 		<module>springcloud-rdltest-elementserver</module>
 		<module>springcloud-rdltest-consumer</module>
+		<module>springcloud-rdltest-gateway</module>
 	</modules>
 </project>

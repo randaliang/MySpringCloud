@@ -1,75 +1,20 @@
+spring:
+  application:
+    name: api-gateway
 server:
   port: 9500
-  session:
-    cookie:
-      name: tokenId 
-
-
-url.eureka: 127.0.0.1:9000
-url.oauth2: 10.21.155.4:9501
-url.report: 110.21.155.8:9084
-#过滤配置菜单项的界面结尾的请求pattern
-url.page.patterns:
-
-
-
-hystrix:
-  command:
-    default:
-      execution:
-        timeout:
-          enabled: false
-        isolation:
-          thread:
-            timeoutInMilliseconds: 1800000
-ribbon:
-  ConnectTimeout: 300000
-  ReadTimeout: 1800000
-  eureka:
-    enabled: true
-  
-
 zuul:
-  host:
-    connect-timeout-millis: 1000000
-    socket-timeout-millis: 6000000
-  add-host-header: true
-  add-proxy-headers: true
   routes:
-    clearing-server: 
+    elevalue:
       path: /elevalue/**
-      service-id: ELESERVER
-      stripPrefix: false       
-    nontax: 
-      path: /consumer/**
-      service-id: consumer
+      serviceId: eleserver
       stripPrefix: false
-    eureka-service: 
-      path: /eureka/**
-      url: http://${url.eureka}
-      stripPrefix: true
-      
+    consumer:
+      path: /consumer/**
+      serviceId: consumer
+      stripPrefix: false
+
 eureka:
   client:
-    service-url:
-      defaultZone: http://${url.eureka}/eureka/
-    enabled: true
-    #表示eureka client间隔多久去拉取服务注册信息 默认为30秒
-    registry-fetch-interval-seconds: 5 
-  instance:
-    prefer-ip-address: true
-   
-
-
-
-#redis配置
-#spring:
-#  redis:
-#    sentinel:
-#      master: mymaster
-#      nodes: 175.25.48.17:10021
-#    pool:
-#      max-active: 8
-#      max-wait: 1
-#      max-idle: 8
-#      min-idle: 1
+    serviceUrl:
+      defaultZone: http://localhost:9000/eureka/
