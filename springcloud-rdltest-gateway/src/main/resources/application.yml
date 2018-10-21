@@ -1,3 +1,7 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9000/eureka/
 spring:
   application:
     name: api-gateway
@@ -14,7 +18,8 @@ zuul:
       serviceId: consumer
       stripPrefix: false
 
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:9000/eureka/
+    webapp:
+      path: /baidu/**
+      sensitive-headers: Set-Cookie
+      url: http://www.baidu.com
+      stripPrefix: true

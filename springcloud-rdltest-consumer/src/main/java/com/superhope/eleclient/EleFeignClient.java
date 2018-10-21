@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.superhope.MyFeignConfiguration;
 
             
-@FeignClient( name="eleserver",path="/elevalue",configuration=MyFeignConfiguration.class)
+@FeignClient( name="eleserver",path="/elevalue",
+	configuration=MyFeignConfiguration.class,
+	fallback = EleFeignClientFeedBack.class)
 public interface EleFeignClient {
 	
     @RequestMapping(value = "/{code}",method=RequestMethod.GET)

@@ -1,0 +1,13 @@
+spring.application.name: consumer
+server.port: 9002
+eureka.client.serviceUrl.defaultZone: http://localhost:9000/eureka/
+#\u542F\u7528okhttp
+feign.httpclient.enabled: false
+feign.okhttp.enabled: true
+feign.hystrix.enabled: true
+feign:
+  client:
+    config:
+      eleserver:           
+        connectTimeout: 1000
+        readTimeout: 1000

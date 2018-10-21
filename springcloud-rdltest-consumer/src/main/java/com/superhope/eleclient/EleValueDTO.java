@@ -1,6 +1,7 @@
 package com.superhope.eleclient;
 
 import java.sql.Date;
+import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -8,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class EleValueDTO {
 	
 	public String getElename() {
+	
 		return elename;
 	}
 

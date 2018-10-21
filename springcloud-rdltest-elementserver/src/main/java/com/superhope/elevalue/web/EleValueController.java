@@ -18,6 +18,15 @@ public class EleValueController {
 
 	@GetMapping("/{code}")
 	public List<EleValueDTO> getEleValues( String code ){
+		if(true){
+			throw new RuntimeException("代码错了！");
+		}
+//		try {
+//			Thread.sleep(1000L);
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		List<EleValueDTO> l = new ArrayList<EleValueDTO>();
 		EleValueDTO dto = new EleValueDTO();
 		dto.setCode("001");
